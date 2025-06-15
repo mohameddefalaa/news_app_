@@ -19,7 +19,17 @@ class ArticleItemslist extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             onTap: () {
-              Webviewscreen(url: finalarticales[index].url);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return Webviewscreen(
+                      url: finalarticales[index].url,
+                      title: finalarticales[index].title,
+                    );
+                  },
+                ),
+              );
             },
             child: Padding(
               padding: const EdgeInsets.all(12.0),
